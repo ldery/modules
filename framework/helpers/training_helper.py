@@ -83,7 +83,7 @@ class TrainingHelper:
         use_gpu(self.opt.gpu)
         if self.opt.seed is not None:
             seed.fix(self.opt.seed)
-
+        print('We should use cuda !!!! : ', self.use_cuda(), torch.cuda.is_available(), torch.__version__)
         self.device = torch.device("cuda") if self.use_cuda() else torch.device("cpu")
 
     def start(self):
